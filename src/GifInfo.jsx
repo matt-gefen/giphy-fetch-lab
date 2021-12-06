@@ -1,9 +1,10 @@
 import React from 'react'
 
 const GifInfo = ({ gif }) => {
+  console.log(gif.data)
   return (
     <>
-    <iframe src="https://giphy.com/embed/WxDZ77xhPXf3i" width="480" height="258" frameBorder="0" class="giphy-embed" title='gif' allowFullScreen></iframe>
+    <iframe src={gif.embed_url} width="480" height="258" frameBorder="0" className="giphy-embed" title='gif' allowFullScreen></iframe>
     </>
   )
 }
