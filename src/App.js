@@ -27,12 +27,16 @@ function App() {
     }
     makeApiCall()
   }, [gifTerm])
-  console.log(gifData)
+  
+  const handleRefresh = () => {
+    setGifData({data:null})
+  }
+
   return (
     <div className="App">
       <h1>Giphy</h1>
       <Form handleSubmit={handleSubmit}/>
-      <button>Make API Call Again</button>
+      <button onClick = {() => handleRefresh()}>Make API Call Again</button>
       {gifData.data ? 
       <GifInfo  gif={gifData}/> : null }
     </div>
