@@ -1,10 +1,14 @@
 import React from 'react'
 
 const GifInfo = ({ gif }) => {
-  console.log(gif.data)
+  let url = ''
+  gif.data.forEach((element) => {
+    url = element.images.original.url
+  })
+
   return (
     <>
-    <iframe src={gif.embed_url} width="480" height="258" frameBorder="0" className="giphy-embed" title='gif' allowFullScreen></iframe>
+    <img src={url} alt="gif"/>
     </>
   )
 }
