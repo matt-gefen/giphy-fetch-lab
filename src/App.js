@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import GifInfo from './GifInfo';
+import React, { useEffect, useState } from 'react';
 
 function App() {
+  const [gifData, setGifData] = useState('')
+  const [gifTerm, setGifTerm] = useState('')
+
+  const handleChange = () => {
+    return
+  }
+  const handleSubmit = () => {
+    return
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Giphy</h1>
+      {/* input - handleSubmit*/}
+      <form onSubmit={handleSubmit}>
+      <input
+        id='gifTerm'
+        type='text'
+        value={gifTerm}
+        onChange={handleChange}
+      />
+      <input type="submit" value="Submit" />
+      </form>
+      <button>Make API Call Again</button>
+      <GifInfo />
+      {/* gif? <gif!/> : null */}
     </div>
   );
 }
