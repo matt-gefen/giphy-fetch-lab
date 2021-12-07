@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Form from './Form';
 
 function App() {
-  const [gifData, setGifData] = useState({data:null})
+  const [gifData, setGifData] = useState('')
   const [gifTerm, setGifTerm] = useState('')
 
   const handleSubmit = term => {
@@ -18,7 +18,7 @@ function App() {
       try {
         const res = await fetch(gifUrl)
         const data = await res.json()
-        setGifData((data))
+        setGifData((data.data))
       } catch(error) {
         console.log(error)
       }
@@ -29,14 +29,13 @@ function App() {
   const handleRefresh = () => {
     setGifData({data:null})
   }
-
+  console.log(gifData)
   return (
     <div className="App">
       <h1>Giphy</h1>
       <Form handleSubmit={handleSubmit}/>
       <button onClick = {() => handleRefresh()}>Make API Call Again</button>
-      {gifData.data ? 
-      <GifInfo  gif={gifData}/> : null }
+      {gifData.length ? <GifInfo  gif={gifData}/> : null}
     </div>
   );
 }
