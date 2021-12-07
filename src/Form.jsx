@@ -6,9 +6,7 @@ function Form(props) {
 
   const handleChange = e => {
     const term = e.target.value
-    console.log('term', term)
     setGifTerm(term)
-    console.log(gifTerm)
   }
   const handleSubmit = e => {
     e.preventDefault()

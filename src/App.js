@@ -16,9 +16,7 @@ function App() {
     let gifUrl = `https://api.giphy.com/v1/gifs/search?api_key=LFYMIdgkEwDs3KuyUKvtYuLr4CleMVPQ&q=${gifTerm}&limit=1`
     async function makeApiCall() {
       try {
-        console.log(gifUrl)
         const res = await fetch(gifUrl)
-        console.log(res)
         const data = await res.json()
         setGifData((data))
       } catch(error) {
