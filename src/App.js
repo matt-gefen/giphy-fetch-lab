@@ -43,6 +43,7 @@ function App() {
   }, [gifTerm])
   
   const handleRefresh = () => {
+    // I'm not sure that this is what we want....
     window.location.reload(false)
   }
   
