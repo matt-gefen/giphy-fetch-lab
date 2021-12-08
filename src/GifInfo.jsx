@@ -1,10 +1,10 @@
 import React from 'react'
 
 const GifInfo = ({ gif }) => {
-
+  console.log(gif)
   return (
     <>
-    <img src={gif[0].images.original.url} alt=""/>
+    <img src={gif.images.original.url} alt=""/>
     </>
   )
 }
